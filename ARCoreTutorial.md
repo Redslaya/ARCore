@@ -24,7 +24,7 @@ The player settings should appear on the rightmost column on the screen. In `Pla
 
 ARCore is available on Android 7.0 (Nougat) and higher devices. Set the Minimum API level to Android 7.0 (API level 24). For Target API Level, set it to Automatic (highest installed). 
 
-image here
+![Player Settings Image](/assets/playerSettings.png)
 
 We’re not quite done yet. In the Player Settings, scroll down until you see the tab `XR Settings`. In the XR Settings, check the **ARCore Supported** box.
 
@@ -35,6 +35,8 @@ In order to create the scene properly, we first need to import the ARCore SDK pa
 
 Next, use the search bar above your scene hierarchy to find the ARCore Device. Drag this into your scene, and then delete the main camera.
 
+![ARCore Device](/assets/arcoreDevice.png)
+
 ### Add Example Controller
 The next step is to add a scene controller that will be used to coordinate between ARCore and Unity. 
 
@@ -42,7 +44,7 @@ First, in your scene hierarchy, search for the canvas and drag it into your scen
 
 Search for the script called AugmentedImageExampleController.cs, and drag it onto SceneController. Then, search for the `AugmentedImageVisualizer` prefab and drag it into the `Augmented Image Visualizer Prefab` box under the script section of your SceneController. Also in this script, drag in the `FitToScanOverlay` from your canvas to `Fit To Scan Overlay`.
 
-image here
+![Example Controller](/assets/exampleController.png)
 
 ### Add Event System
 Next, go to `GameObject -> UI -> Event System`. This will automatically add the event to the scene. 
@@ -57,7 +59,7 @@ This next step is just to add a little pizzazz to our project.
 
 Navigate to `Assets/Scripts` and create a new C# file. If you have Visual Studio installed, this should pull up the IDE, where you can start writing the script. Otherwise, pull up your favorite text editor and navigate to the file in your Unity project. Outside of the class, make sure you have the following lines:
 
-image here
+![Rotation Imports](/assets/rotateImports.png)
 
 Inside the class, you should see a Start function and an Update function. We do not need to do any initialization for this script, so we can ignore the Start function. If you want, you can even delete it. The Update function will run once per frame, so this is where we need to write our code to make the cube spin. Add the following line: 
 
@@ -74,7 +76,7 @@ So now we have a script for rotating any object, but now we need to attach it to
 ### Set up Your Phone
 The next step in this project is to export the code to your Android device. To do so, we must enable developer options and USB debugging on the device. Go to `Settings -> Systems -> About Phone`. On the screen, there should be text that says **Build Number**. You need to click on this **seven times**. This will enable developer mode. I know it's weird. Just do it. If you back out to the `Settings` main page, there should now be an option called `Developer Options`. Next, you should scroll down a little and enable USB debugging.
 
-image here
+![Phone Configuration](/assets/phoneConfig.png)
 
 ### Connect your Phone to Your Computer
 Use a data USB-C cable to connect your device, and make sure your computer recognizes the phone that is connected. 
@@ -82,7 +84,7 @@ Use a data USB-C cable to connect your device, and make sure your computer recog
 ### Export
 Finally, in the Unity `Build Settings` window, click **Build and Run**.
 
-image here
+![Build Settings](/assets/buildSettings.png)
 
 Make sure to click on the correct scene at the top, which is the one you have building from. Then on the bottom left, select the platform to be Android. You should now be able to click **Build and Run**, which creates an Android APK. 
 
