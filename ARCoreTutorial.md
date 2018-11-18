@@ -1,0 +1,89 @@
+author: Alex Hard, Erika Snow, Alexandra Wheeler, Joan Wong
+summary: CS4518 Tutorial: ARCore
+id: arcoreTutorial
+categories: common
+environment: markdown
+status: draft
+
+# CS4518 Tutorial: ARCore
+
+## Install Software
+In order to complete this tutorial, the following software must be downloaded:
+
+- Unity: https://unity3d.com/get-unity/download (select personal)
+    - Note: please ensure that Android Build Support is selected during installation
+- ARCore SDK for Unity: https://github.com/google-ar/arcore-unity-sdk/releases 
+- Starter code: https://github.com/Redslaya/ARCore 
+
+## Setting up the Environment
+In your Unity project, it is necessary to configure the environment to support Android and augmented reality (AR). In Unity, select `File -> Build Settings`, and a new window should appear with the option to select the platform. Select `Android` in the platform list and click the **Select Platform** button below. This may take a few seconds to change. Afterwards, click the **Player Settings** button.
+
+image here
+
+The player settings should appear on the rightmost column on the screen. In `Players Settings`, you must select the `Other Settings` tab. Within this tab, you are required to change the `Package Name` just as you would in Android Studio. Below the package name you need to change the minimum API level and target API level.
+
+ARCore is available on Android 7.0 (Nougat) and higher devices. Set the Minimum API level to Android 7.0 (API level 24). For Target API Level, set it to Automatic (highest installed). 
+
+image here
+
+We’re not quite done yet. In the Player Settings, scroll down until you see the tab `XR Settings`. In the XR Settings, check the **ARCore Supported** box.
+
+## Create the Scene
+
+### Add ARCore Device
+In order to create the scene properly, we first need to import the ARCore SDK package. To do so, navigate to `Assets/Import Package/Custom Package` and find the arcore-unity-sdk package in the File Explorer. When you import the package, make sure all the items are pre-checked. This will put all the contents of the package to the Assets folder of your project.
+
+Next, use the search bar above your scene hierarchy to find the ARCore Device. Drag this into your scene, and then delete the main camera.
+
+### Add Example Controller
+The next step is to add a scene controller that will be used to coordinate between ARCore and Unity. 
+
+First, in your scene hierarchy, search for the canvas and drag it into your scene. Next, create an empty game object and change its name to SceneController. 
+
+Search for the script called AugmentedImageExampleController.cs, and drag it onto SceneController. Then, search for the `AugmentedImageVisualizer` prefab and drag it into the `Augmented Image Visualizer Prefab` box under the script section of your SceneController. Also in this script, drag in the `FitToScanOverlay` from your canvas to `Fit To Scan Overlay`.
+
+image here
+
+### Add Event System
+Next, go to `GameObject -> UI -> Event System`. This will automatically add the event to the scene. 
+
+## Add Image Database
+Next, we need to add an Image Target to our image target database. This database allows multiple image targets to display the same visualization. Thankfully, the ARCore SDK includes a basic database for us to use. To find this database, search in the project hierarchy for "Example database” and double click on the Unity object that appears. 
+
+Click the **+** icon to add an image and make sure you give it a name. Images with unique patterns and contrasting colors work best. The database will automatically give you a score for how good of a target your image is. You should aim to use images with a score of 85 or above. 
+
+## Make the Cube Rotate
+This next step is just to add a little pizzazz to our project.
+
+Navigate to `Assets/Scripts` and create a new C# file. If you have Visual Studio installed, this should pull up the IDE, where you can start writing the script. Otherwise, pull up your favorite text editor and navigate to the file in your Unity project. Outside of the class, make sure you have the following lines:
+
+image here
+
+Inside the class, you should see a Start function and an Update function. We do not need to do any initialization for this script, so we can ignore the Start function. If you want, you can even delete it. The Update function will run once per frame, so this is where we need to write our code to make the cube spin. Add the following line: 
+
+```
+transform.Rotate(Vector3.up, speed * Time.deltaTime);
+```
+
+Finally, we need to declare and set the variable speed within the class. It should be a float, and you can set the value to whatever you want. Experiment with different values and see what you like.
+
+So now we have a script for rotating any object, but now we need to attach it to the cube. Save the file and navigate back to the Unity screen. Unity makes this part really simple. All you need to do is navigate to the script in your assets/scripts folder, and drag it onto the cube either within the scene, or on the side bar. Now run the scene and watch your cube spin!
+
+## Export the Code
+
+### Set up Your Phone
+The next step in this project is to export the code to your Android device. To do so, we must enable developer options and USB debugging on the device. Go to `Settings -> Systems -> About Phone`. On the screen, there should be text that says **Build Number**. You need to click on this **seven times**. This will enable developer mode. I know it's weird. Just do it. If you back out to the `Settings` main page, there should now be an option called `Developer Options`. Next, you should scroll down a little and enable USB debugging.
+
+image here
+
+### Connect your Phone to Your Computer
+Use a data USB-C cable to connect your device, and make sure your computer recognizes the phone that is connected. 
+
+### Export
+Finally, in the Unity `Build Settings` window, click **Build and Run**.
+
+image here
+
+Make sure to click on the correct scene at the top, which is the one you have building from. Then on the bottom left, select the platform to be Android. You should now be able to click **Build and Run**, which creates an Android APK. 
+
+You can now click on the app that is installed on your device to launch it. You should see an Unity screen when loading and then see the world through the camera. Move your phone around and have fun!
