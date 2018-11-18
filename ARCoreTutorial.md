@@ -18,7 +18,7 @@ In order to complete this tutorial, the following software must be downloaded:
 ## Setting up the Environment
 In your Unity project, it is necessary to configure the environment to support Android and augmented reality (AR). In Unity, select `File -> Build Settings`, and a new window should appear with the option to select the platform. Select `Android` in the platform list and click the **Select Platform** button below. This may take a few seconds to change. Afterwards, click the **Player Settings** button.
 
-image here
+![Environment Image](/assets/envSetup.png)
 
 The player settings should appear on the rightmost column on the screen. In `Players Settings`, you must select the `Other Settings` tab. Within this tab, you are required to change the `Package Name` just as you would in Android Studio. Below the package name you need to change the minimum API level and target API level.
 
