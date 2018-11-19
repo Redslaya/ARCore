@@ -93,7 +93,7 @@ Finally, in the Unity `Build Settings` window, click **Build and Run**.
 
 Make sure to click on the correct scene at the top, which is the one you have building from. Then on the bottom left, select the platform to be Android. You should now be able to click **Build and Run**, which creates an Android APK. 
 
-You can now click on the app that is installed on your device to launch it. You should see an Unity screen when loading and then see the world through the camera. Center the picture target inside the brakets on the phone's screen and watch your cube appear!
+You can now click on the app that is installed on your device to launch it. You should see an Unity screen when loading and then see the world through the camera. Open the given WPI logo file on your computer screen or print it out. Center the picture target inside the brackets on the phone's screen and watch your cube appear!
 
 ### More Information
 More information about ARCore can be found at google's website: https://developers.google.com/ar/develop/unity/quickstart-android and https://developers.google.com/ar/develop/unity/augmented-images/
