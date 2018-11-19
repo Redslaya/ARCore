@@ -1,9 +1,9 @@
-author: Alex Hard, Erika Snow, Alexandra Wheeler, Joan Wong  
-summary: CS4518 Tutorial: ARCore  
-id: arcoreTutorial  
-categories: common  
-environment: markdown  
-status: draft  
+Author: Alex Hard, Erika Snow, Alexandra Wheeler, Joan Wong  
+Summary: CS4518 Tutorial ARCore  
+ID: arcoreTutorial  
+Categories: common  
+Environment: markdown  
+Status: draft  
 
 
 # CS4518 Tutorial: ARCore
@@ -12,7 +12,7 @@ status: draft
 In order to complete this tutorial, the following software must be downloaded:
 
 - Unity: https://unity3d.com/get-unity/download (select personal)
-    - Note: please ensure that Android Build Support is selected during installation
+    - Note: Please ensure that Android Build Support is selected during installation
 - ARCore SDK for Unity: https://github.com/google-ar/arcore-unity-sdk/releases 
 - Starter code: https://github.com/Redslaya/ARCore 
 
@@ -36,7 +36,7 @@ In order to create the scene properly, we first need to import the ARCore SDK pa
 
 Next, use the search bar above your project directory hierarchy to find the ARCore Device. Drag this into your scene, and then delete the main camera.
 
-Once you have added the ARCore Device to the scene, you need to set the proper configuration for the device. to do so, go to `Assets -> prefabs` and drag `AugmentedImagesSessionConfig` into the Device Session variable in ARCore Device. 
+Once you have added the ARCore Device to the scene, you need to set the proper configuration for the device. To do so, go to `Assets -> prefabs` and drag `AugmentedImagesSessionConfig` into the Device Session variable in ARCore Device. 
 
 ![ARCore Device](/assets/arcoreDevice.png)
 
@@ -96,8 +96,8 @@ Make sure to click on the correct scene at the top, which is the one you have bu
 You can now click on the app that is installed on your device to launch it. You should see an Unity screen when loading and then see the world through the camera. Open the given WPI logo file on your computer screen or print it out. Center the picture target inside the brackets on the phone's screen and watch your cube appear!
 
 ### More Information
-More information about ARCore can be found at google's website: https://developers.google.com/ar/develop/unity/quickstart-android and https://developers.google.com/ar/develop/unity/augmented-images/
+More information about ARCore can be found at Google's website: https://developers.google.com/ar/develop/unity/quickstart-android and https://developers.google.com/ar/develop/unity/augmented-images/
 
-and at unity's website: https://unity3d.com/partners/google/arcore
+At Unity's website: https://unity3d.com/partners/google/arcore
 
 ARCore SDK for Unity was utilized in the creation of this project and tutorial. 
