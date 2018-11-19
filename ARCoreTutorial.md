@@ -1,9 +1,15 @@
 author: Alex Hard, Erika Snow, Alexandra Wheeler, Joan Wong
+
 summary: CS4518 Tutorial: ARCore
+
 id: arcoreTutorial
+
 categories: common
+
 environment: markdown
+
 status: draft
+
 
 # CS4518 Tutorial: ARCore
 
@@ -42,14 +48,14 @@ Once you have added the ARCore Device to the scene, you need to set the proper c
 ### Add Example Controller
 The next step is to add a scene controller that will be used to coordinate between ARCore and Unity. 
 
-First, in your project directory hierarchy, navigate to `Assets -> Prefabs` and find the prefab called canvas. Drag it into your scene. Next, create an empty game object in your scene heirarchy by selecting `Create -> Empty Object` and change its name to SceneController. 
+First, in your project directory hierarchy, navigate to `Assets -> Prefabs` and find the prefab called canvas. Drag it into your scene. Next, create an empty game object in your scene heirarchy by selecting `Create -> Create Empty` and change its name to SceneController. 
 
-Search for the script called AugmentedImageController.cs in your project directory hierarchy, and drag it onto SceneController. Then, in `Assets -> prefabs`, drag the `AugmentedImageVisualizer` prefab into the `Augmented Image Visualizer Prefab` variable under the script section of your SceneController. Also in this script, drag in the `FitToScanOverlay` from your canvas in the scene to `Fit To Scan Overlay`.
+Search for the script called AugmentedImageController.cs in your project directory hierarchy, and drag it onto SceneController. Then, in `Assets -> prefabs`, drag the `AugmentedImageVisualizer` prefab into the `Augmented Image Visualizer Prefab` variable under the script section of your SceneController. Also in this script, drag in the `FitToScanOverlay`, a child of canvas, from your scene to `Fit To Scan Overlay`.
 
 ![Example Controller](/assets/exampleController.png)
 
 ### Add Event System
-Next, go to `GameObject -> UI -> Event System`. This will automatically add the event to the scene. 
+Next, go to `Create -> UI -> Event System`. This will automatically add the event to the scene. 
 
 ## Add Image Database
 Next, we need to add an Image Target to our image target database. This database allows multiple image targets to display the same visualization. Thankfully, the ARCore SDK includes a basic database for us to use. To find this database, search in the project hierarchy for "Example database” and click on the Unity object that appears. 
@@ -59,7 +65,7 @@ If your database does not already include a picture, we have provided an image f
 ## Make the Cube Rotate
 This next step is just to add a little pizzazz to our project.
 
-Navigate to `Assets/Scripts` and create a new C# file. If you have Visual Studio installed, this should pull up the IDE, where you can start writing the script. Otherwise, pull up your favorite text editor and navigate to the file in your Unity project. Outside of the class, make sure you have the following lines:
+In the project hierarchy, under `Assets` create a folder named `Scripts` and create a new C# file. If you have Visual Studio installed, this should pull up the IDE, where you can start writing the script. Otherwise, pull up your favorite text editor and navigate to the file in your Unity project. Outside of the class, make sure you have the following lines:
 
 ![Rotation Imports](/assets/rotateImports.png)
 
@@ -69,9 +75,11 @@ Inside the class, you should see a Start function and an Update function. We do 
 transform.Rotate(Vector3.up, speed * Time.deltaTime);
 ```
 
-Finally, we need to declare and set the variable speed within the class. It should be a float, and you can set the value to whatever you want. Experiment with different values and see what you like.
+Finally, we need to declare and set the variable speed within the class. This variable should be public so it can be easily updated from inside the editor. It should be a float, and you can set the value to whatever you want, we reccommend starting with 100. Experiment with different values and see what you like.
 
-So now we have a script for rotating any object, but now we need to attach it to the cube. Save the file and navigate back to the Unity screen. Unity makes this part really simple. All you need to do is navigate to the script in your assets/scripts folder, and drag it onto the cube either within the scene, or on the side bar. Now run the scene and watch your cube spin!
+So now we have a script for rotating any object, but now we need to attach it to the cube. Save the file and navigate back to the Unity screen. Unity makes this part really simple. All you need to do is navigate to the script in your assets/scripts folder, and drag it onto the cube within the scene. In you scene hierarchy click on the Scene Controller, then double click on AugmentedImageVisualizer. Finally double click on the cube. Then drag the script from `assets/scripts` onto the cube and type 100 into the speed variable. 
+
+Finally you must add a second cube to your screen. to do so, go to `Assets/prefabs` and drag the cube into the scene. Make sure its scale is (0.05,0.05,0.05) and it's position is (0,0,0).
 
 ## Export the Code
 
@@ -90,4 +98,4 @@ Finally, in the Unity `Build Settings` window, click **Build and Run**.
 
 Make sure to click on the correct scene at the top, which is the one you have building from. Then on the bottom left, select the platform to be Android. You should now be able to click **Build and Run**, which creates an Android APK. 
 
-You can now click on the app that is installed on your device to launch it. You should see an Unity screen when loading and then see the world through the camera. Move your phone around and have fun!
+You can now click on the app that is installed on your device to launch it. You should see an Unity screen when loading and then see the world through the camera. Center the picture target inside the brakets on the phone's screen and watch your cube appear!
