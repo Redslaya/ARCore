@@ -47,7 +47,7 @@ First, in your project directory hierarchy, navigate to `Assets -> Prefabs` and 
 
 Search for the script called AugmentedImageController.cs in your project directory hierarchy, and drag it onto SceneController. Then, in `Assets -> prefabs`, drag the `AugmentedImageVisualizer` prefab into the `Augmented Image Visualizer Prefab` variable under the script section of your SceneController. Also in this script, drag in the `FitToScanOverlay`, a child of canvas, from your scene to `Fit To Scan Overlay`.
 
-![Scene Controller](/assets/sceneController.png)
+![Scene Controller](/assets/sceneController.PNG)
 
 ### Add Event System
 Next, go to `Create -> UI -> Event System`. This will automatically add the event to the scene. 
