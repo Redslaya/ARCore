@@ -16,7 +16,7 @@ In order to complete this tutorial, the following software must be downloaded:
 - Starter code: https://github.com/Redslaya/ARCore 
 
 ## Setting up the Environment
-In your Unity project, it is necessary to configure the environment to support Android and augmented reality (AR). In Unity, select `File -> Build Settings`, and a new window should appear with the option to select the platform. Select `Android` in the platform list and click the **Select Platform** button below. This may take a few seconds to change. Afterwards, click the **Player Settings** button.
+In your Unity project, it is necessary to configure the environment to support Android and augmented reality (AR). In Unity, select `File -> Build Settings`, and a new window should appear with the option to select the platform. Select `Android` in the platform list and click the **Switch Platform** button below. This may take a few seconds to change. Afterwards, click the **Player Settings** button.
 
 ![Environment Image](/assets/envSetup.png)
 
@@ -31,18 +31,18 @@ We’re not quite done yet. In the Player Settings, scroll down until you see th
 ## Create the Scene
 
 ### Add ARCore Device
-In order to create the scene properly, we first need to import the ARCore SDK package. To do so, navigate to `Assets/Import Package/Custom Package` and find the arcore-unity-sdk package in the File Explorer. When you import the package, make sure all the items are pre-checked. This will put all the contents of the package to the Assets folder of your project.
+In order to create the scene properly, we first need to import the ARCore SDK package. We have incorporated the SDK into the starter code package you downloaded from the Github. To do so, navigate to `Assets/Import Package/Custom Package` and find the CS4518 package in the File Explorer. When you import the package, make sure all the items are pre-checked. This will put all the contents of the package to the Assets folder of your project.
 
-Next, use the search bar above your scene hierarchy to find the ARCore Device. Drag this into your scene, and then delete the main camera.
+Next, use the search bar above your project directory hierarchy to find the ARCore Device. Drag this into your scene, and then delete the main camera.
 
 ![ARCore Device](/assets/arcoreDevice.png)
 
 ### Add Example Controller
 The next step is to add a scene controller that will be used to coordinate between ARCore and Unity. 
 
-First, in your scene hierarchy, search for the canvas and drag it into your scene. Next, create an empty game object and change its name to SceneController. 
+First, in your project directory hierarchy, navigate to `Assets -> Prefabs` and find the prefab called canvas. Drag it into your scene. Next, create an empty game object in your scene heirarchy by selecting `Create -> Empty Object` and change its name to SceneController. 
 
-Search for the script called AugmentedImageExampleController.cs, and drag it onto SceneController. Then, search for the `AugmentedImageVisualizer` prefab and drag it into the `Augmented Image Visualizer Prefab` box under the script section of your SceneController. Also in this script, drag in the `FitToScanOverlay` from your canvas to `Fit To Scan Overlay`.
+Search for the script called AugmentedImageController.cs in your project directory hierarchy, and drag it onto SceneController. Then, search for the `AugmentedImageVisualizer` prefab and drag it into the `Augmented Image Visualizer Prefab` box under the script section of your SceneController. Also in this script, drag in the `FitToScanOverlay` from your canvas in the scene to `Fit To Scan Overlay`.
 
 ![Example Controller](/assets/exampleController.png)
 
@@ -52,7 +52,7 @@ Next, go to `GameObject -> UI -> Event System`. This will automatically add the 
 ## Add Image Database
 Next, we need to add an Image Target to our image target database. This database allows multiple image targets to display the same visualization. Thankfully, the ARCore SDK includes a basic database for us to use. To find this database, search in the project hierarchy for "Example database” and double click on the Unity object that appears. 
 
-Click the **+** icon to add an image and make sure you give it a name. Images with unique patterns and contrasting colors work best. The database will automatically give you a score for how good of a target your image is. You should aim to use images with a score of 85 or above. 
+If your database does not already include a picture, we have provided an image file of the WPI logo in `Assets -> prefabs` for you to use. Simply click select on the empty image and look for the WPI logo in the box that appears! Images with unique patterns and contrasting colors work best. The database will automatically give you a score for how good of a target your image is. You should aim to use images with a score of 85 or above. 
 
 ## Make the Cube Rotate
 This next step is just to add a little pizzazz to our project.
