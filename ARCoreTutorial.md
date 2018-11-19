@@ -1,13 +1,8 @@
 author: Alex Hard, Erika Snow, Alexandra Wheeler, Joan Wong
-
 summary: CS4518 Tutorial: ARCore
-
 id: arcoreTutorial
-
 categories: common
-
 environment: markdown
-
 status: draft
 
 
