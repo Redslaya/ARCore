@@ -40,14 +40,14 @@ Once you have added the ARCore Device to the scene, you need to set the proper c
 
 ![ARCore Device](/assets/arcoreDevice.png)
 
-### Add Example Controller
+### Add Scene Controller
 The next step is to add a scene controller that will be used to coordinate between ARCore and Unity. 
 
 First, in your project directory hierarchy, navigate to `Assets -> Prefabs` and find the prefab called canvas. Drag it into your scene. Next, create an empty game object in your scene heirarchy by selecting `Create -> Create Empty` and change its name to SceneController. 
 
 Search for the script called AugmentedImageController.cs in your project directory hierarchy, and drag it onto SceneController. Then, in `Assets -> prefabs`, drag the `AugmentedImageVisualizer` prefab into the `Augmented Image Visualizer Prefab` variable under the script section of your SceneController. Also in this script, drag in the `FitToScanOverlay`, a child of canvas, from your scene to `Fit To Scan Overlay`.
 
-![Example Controller](/assets/exampleController.png)
+![Scene Controller](/assets/sceneController.png)
 
 ### Add Event System
 Next, go to `Create -> UI -> Event System`. This will automatically add the event to the scene. 
@@ -94,3 +94,10 @@ Finally, in the Unity `Build Settings` window, click **Build and Run**.
 Make sure to click on the correct scene at the top, which is the one you have building from. Then on the bottom left, select the platform to be Android. You should now be able to click **Build and Run**, which creates an Android APK. 
 
 You can now click on the app that is installed on your device to launch it. You should see an Unity screen when loading and then see the world through the camera. Center the picture target inside the brakets on the phone's screen and watch your cube appear!
+
+### More Information
+More information about ARCore can be found at google's website: https://developers.google.com/ar/develop/unity/quickstart-android and https://developers.google.com/ar/develop/unity/augmented-images/
+
+and at unity's website: https://unity3d.com/partners/google/arcore
+
+ARCore SDK for Unity was utilized in the creation of this project and tutorial. 
