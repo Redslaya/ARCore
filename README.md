@@ -1,5 +1,5 @@
 # ARCore
-author: Alex Hard, Erika Snow, Alexandra Wheeler, Joan Wong
+author: Alex Hard, Erika Snow, Alexandra Wheeler, Joan Wong  
 summary: CS4518 Tutorial: ARCore
 
 ## This Project
