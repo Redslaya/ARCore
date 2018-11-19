@@ -35,6 +35,8 @@ In order to create the scene properly, we first need to import the ARCore SDK pa
 
 Next, use the search bar above your project directory hierarchy to find the ARCore Device. Drag this into your scene, and then delete the main camera.
 
+Once you have added the ARCore Device to the scene, you need to set the proper configuration for the device. to do so, go to `Assets -> prefabs` and drag `AugmentedImagesSessionConfig` into the Device Session variable in ARCore Device. 
+
 ![ARCore Device](/assets/arcoreDevice.png)
 
 ### Add Example Controller
@@ -42,7 +44,7 @@ The next step is to add a scene controller that will be used to coordinate betwe
 
 First, in your project directory hierarchy, navigate to `Assets -> Prefabs` and find the prefab called canvas. Drag it into your scene. Next, create an empty game object in your scene heirarchy by selecting `Create -> Empty Object` and change its name to SceneController. 
 
-Search for the script called AugmentedImageController.cs in your project directory hierarchy, and drag it onto SceneController. Then, search for the `AugmentedImageVisualizer` prefab and drag it into the `Augmented Image Visualizer Prefab` box under the script section of your SceneController. Also in this script, drag in the `FitToScanOverlay` from your canvas in the scene to `Fit To Scan Overlay`.
+Search for the script called AugmentedImageController.cs in your project directory hierarchy, and drag it onto SceneController. Then, in `Assets -> prefabs`, drag the `AugmentedImageVisualizer` prefab into the `Augmented Image Visualizer Prefab` variable under the script section of your SceneController. Also in this script, drag in the `FitToScanOverlay` from your canvas in the scene to `Fit To Scan Overlay`.
 
 ![Example Controller](/assets/exampleController.png)
 
@@ -50,7 +52,7 @@ Search for the script called AugmentedImageController.cs in your project directo
 Next, go to `GameObject -> UI -> Event System`. This will automatically add the event to the scene. 
 
 ## Add Image Database
-Next, we need to add an Image Target to our image target database. This database allows multiple image targets to display the same visualization. Thankfully, the ARCore SDK includes a basic database for us to use. To find this database, search in the project hierarchy for "Example database” and double click on the Unity object that appears. 
+Next, we need to add an Image Target to our image target database. This database allows multiple image targets to display the same visualization. Thankfully, the ARCore SDK includes a basic database for us to use. To find this database, search in the project hierarchy for "Example database” and click on the Unity object that appears. 
 
 If your database does not already include a picture, we have provided an image file of the WPI logo in `Assets -> prefabs` for you to use. Simply click select on the empty image and look for the WPI logo in the box that appears! Images with unique patterns and contrasting colors work best. The database will automatically give you a score for how good of a target your image is. You should aim to use images with a score of 85 or above. 
 
@@ -79,7 +81,7 @@ The next step in this project is to export the code to your Android device. To d
 ![Phone Configuration](/assets/phoneConfig.png)
 
 ### Connect your Phone to Your Computer
-Use a data USB-C cable to connect your device, and make sure your computer recognizes the phone that is connected. 
+Use a data cable to connect your device, and make sure your computer recognizes the phone that is connected. 
 
 ### Export
 Finally, in the Unity `Build Settings` window, click **Build and Run**.
