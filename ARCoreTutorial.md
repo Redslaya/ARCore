@@ -74,7 +74,7 @@ Finally, we need to declare and set the variable speed within the class. This va
 
 So now we have a script for rotating any object, but now we need to attach it to the cube. Save the file and navigate back to the Unity screen. Unity makes this part really simple. All you need to do is navigate to the script in your assets/scripts folder, and drag it onto the cube within the scene. In you scene hierarchy click on the Scene Controller, then double click on AugmentedImageVisualizer. Finally double click on the cube. Then drag the script from `assets/scripts` onto the cube and type 100 into the speed variable. 
 
-Finally you must add a second cube to your screen. to do so, go to `Assets/prefabs` and drag the cube into the scene. Make sure its scale is (0.05,0.05,0.05) and it's position is (0,0,0).
+Finally, you must add a second cube to your screen. to do so, go to `Assets/prefabs` and drag the cube into the scene. Make sure its scale is (0.05,0.05,0.05) and it's position is (0,0,0).
 
 ## Export the Code
 
